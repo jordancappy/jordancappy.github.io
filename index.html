@@ -7,226 +7,91 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <!-- colour theme https://coolors.co/0056e0-f4faff-394648-4cb944-db3a34 -->
     <style>
-        html,
-        body {
-            font-family: 'Open Sans', sans-serif;
-            margin: 0;
+        html, body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          --animation-duration: 1.5s;
         }
-
-        header {
-            background: #0056E0;
-            padding: 4vh;
-            color: white;
-            text-align: center;
-        }
-
-        h1,
-        h3 {
-            margin: 0;
-        }
-
-        header>#contact-details .line-height {
-            line-height: 36px;
-        }
-
-        .flex {
-            display: flex;
-        }
-
-        .flex.even {
-            justify-content: space-evenly;
-        }
-
-        .border-white-right {
-            border-right: 1px solid white;
-        }
-
         main {
-            display: flex;
-            justify-content: space-around;
+          display:flex;
+          height: 100vh;
+          width: 100vw;
+          align-items:center;
+          justify-content: center;
         }
-
-        aside {
-            min-width: 200px;
+        
+        .name {
+          text-transform: uppercase;
+          font-size: 3rem;
+          font-weight: 500;
         }
-
-        main>* {
-            padding: 2vh;
+        
+        .name :nth-child(1) {
+          opacity: 0;
+          animation: fade-in-out var(--animation-duration) var(--animation-duration), fade-in var(--animation-duration) calc(var(--animation-duration) * 6);
+          animation-fill-mode: forwards;
         }
-
-        hr {
-            border-color: #394648;
+        .name :nth-child(2) {
+          opacity: 0;
+          animation: fade-in-out var(--animation-duration)calc(var(--animation-duration) * 2), fade-in var(--animation-duration) calc(var(--animation-duration) * 6);
+           animation-fill-mode: forwards;
         }
-
-        .text-faded {
-            color: #394648;
+        .name :nth-child(3) {
+          opacity: 0;
+          animation: fade-in-out var(--animation-duration)calc(var(--animation-duration) * 3),fade-in var(--animation-duration) calc(var(--animation-duration) * 6);
+           animation-fill-mode: forwards;
         }
-
-        .margin-top-zero {
-            margin-top: 0;
+        .name :nth-child(4) {
+          opacity: 0;
+          animation: fade-in-out var(--animation-duration) calc(var(--animation-duration) * 4), fade-in var(--animation-duration) calc(var(--animation-duration) * 6);
+           animation-fill-mode: forwards;
         }
-
-        .italic {
-            font-style: italic;
+        .name :nth-child(5) {
+          opacity: 0;
+          animation: fade-in-out var(--animation-duration) calc(var(--animation-duration) * 5), fade-in var(--animation-duration) calc(var(--animation-duration) * 6);
+           animation-fill-mode: forwards;
         }
-
-        footer {
-            border-top: 1px solid black;
-            padding: 1vh 2vh;
-            display: none;
-            justify-content: space-between;
-            position: absolute;
-            left: 0;
-            right: 0;
+        
+        @keyframes fade-in-out {
+          0% {
+            opacity: 0;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
         }
-
+        
+        @keyframes fade-in {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+        
+        @media (prefers-color-scheme: dark) {
+          body {
+            background-color: #333;
+            color: #fff;
+          }
+        }
     </style>
 
 </head>
 
 <body>
-    <header>
-        <h1>Jordan Cappy</h1>
-        <p>Full Stack Developer</p>
-        
-    </header>
-
     <main>
-        <aside>
-            <h2>Competencies</h2>
-            <hr />
-
-            <ul>
-                <li>Logical Thinking</li>
-                <li>Strong Communication/ Teamwork skills</li>
-                <li>Honesty</li>
-                <li>Emotional Empathy</li>
-                <li>Self Motivation</li>
-                <li>Organisation</li>
-                <li>Creative Problem Resoultion</li>
-                <li>Quick & Sound decision making</li>
-                <li>Proficiently reach set Goals</li>
-                <li>Abiltiy to work autonomously</li>
-                <li>Dedicated work ethic</li>
-            </ul>
-
-            <h2>Education</h2>
-            <hr />
-            <div>
-                <strong>Bachelor of Information Technology</strong>
-                <div>University of LaTrobe Bendigo</div>
-                <div class="text-faded">Graduated 2014</div>
-
-            </div>
-            <br />
-            <strong>Bachelor of Business</strong>
-            <div>University of LaTrobe Bendigo</div>
-            <div class="text-faded">Graduated 2014</div>
-            <br />
-            <strong>Awards</strong>
-            <ul>
-                <li>Dean's Honours List 2012</li>
-                <li>Industry Based Learning Scholarship</li>
-                <ul>
-        </aside>
-        <div>
-            <section id="objective">
-                <h2>Objective</h2>
-                <hr />
-                <p>
-                    To work in an enviroment where I can further my UX and development skills with the latest
-                    technologies in order to develop solutions that I am both proud of and enhance the companies
-                    productivity and reputation.
-                </p>
-            </section>
-            <section id="technical-skills">
-                <h2>Technical Skills</h2>
-                <hr />
-                <p>
-                    <strong>Frameworks:</strong>
-                    .Net Framework/Core, Node.js, Laravel, Android, iOS, React Native, API
-                </p>
-                <p>
-                    <strong>Front-end Frameworks:</strong>
-                    React.js + redux, AngularJS, Bootstrap, jQuery
-                </p>
-                <p>
-                    <strong>Languages:</strong>
-                    C#, SQL, HTML, CSS3, JavaScript (es2019), Java, PHP, Swift, XML, JSON,
-                </p>
-                <p>
-                    <strong>Tools:</strong>
-                    Visual Studio/VS code, MS Sql Server, Adobe XD, MS Azure DevOps, AWS, PosgresSql, Git,
-                    SubversionSVN, various Text editors, Windows Server, Terminals/command shells, Agile, MS Office
-                </p>
-                <p>
-                    <strong>Operating Systems:</strong>
-                    Windows 10 , macOS 11, Linux
-                </p>
-            </section>
-
-            <section>
-                <h2>Professional Experience</h2>
-                <hr />
-                <div>
-                    <h3>
-                        <strong>Solutions Developer</strong> - Bendigo Telco
-                    </h3>
-                    <p class="text-faded margin-top-zero">September 2014 - <span class="italic">present</span></p>
-                    <p>Design and implement solutions to meet businesses growing demands and support legacy systems.
-                        Focus on implementing automation of business processes and maintaining customer facing systems
-                    </p>
-                  
-                </div>
-            </section>
-
-            <section class="page-break">
-                <div>
-                    <h3>
-                        <strong>Industry Based Learning</strong> - Integrating Technology
-                    </h3>
-                    <p class="text-fa margin-top-zero">Semester 1, 2013 Placement</p>
-                    <p>Main role was to perform Dell Warranty across Victoria. This required autonomous organisation
-                        fetching replacement parts from various depos and driving all over the Victoria regions to
-                        provide on-site support for end users and businesses.</p>
-                  
-                
-                </div>
-                <div>
-                    <h3>
-                        <strong>Industry Based Learning</strong> - Loddon Mallee Rural Health Alliance
-                    </h3>
-                    <p class="text-fa margin-top-zero">Semester 2, 2013 Placement</p>
-                    <p>Provided support for various IT Projects and attended meetings with clients to assist for
-                        requirement gathering and solution design.</p>
-                 
-                </div>
-                <div>
-                    <h3>
-                        <strong>Clerk</strong> - Castlemaine IGA Supermarket
-                    </h3>
-                    <p class="text-fa margin-top-zero">Part-time work 2005 - 2017</p>
-                    <p>Responsible for managing department on weekends shifts.</p>
-            
-                </div>
-            </section>
-
-            <section>
-                <h2>Interests</h2>
-                <hr />
-                <ul>
-                    <li>Reading large Comic book collection</li>
-                    <li>Playing computer games</li>
-                    <li>Learning new skills</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>References</h2>
-                <hr />
-                <p>Available on request</p>
-            </section>
-        </div>
+      <div class="name">
+        <span>j</span>
+        <span>c</span>
+        <span>a</span>
+        <span>p</span>
+        <span>s</span>
+      <div>
     </main>
 
 </body>
